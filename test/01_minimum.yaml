@@ -1,0 +1,13 @@
+tables:
+  test:
+    columns:
+      id:
+        type: INT AUTO_INCREMENT
+      name:
+        type: VARCHAR(50)
+  execute_history:
+    columns:
+      test_id:
+        type: INT
+      execute_at:
+        type: DATETIME

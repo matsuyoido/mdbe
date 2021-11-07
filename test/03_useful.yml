@@ -1,0 +1,35 @@
+version: 0.0.1
+
+domains:
+	ID: INT AUTO_INCREMENT
+	ID_REFERENCE: INT
+	TESTNAME: VARCHAR(50)
+	日時: DATETIME
+
+commons:
+	updated_at:
+		type: 日時
+		notNull: true
+		defaultValue: current_timestamp()
+
+tables:
+	test:
+		columns:
+			id:
+				type: ID
+			name:
+				type: TESTNAME
+		pk:
+			- id
+	execute_history:
+		columns:
+			test_id:
+				type: ID_REFERENCE
+			execute_at:
+				type: 日時
+
+execute_history_FK01:
+	relate:
+		- execute_history.test_id
+	to:
+		- test.id

@@ -1,0 +1,32 @@
+tables:
+    test:
+        columns:
+            id:
+                type: INT AUTO_INCREMENT
+            name:
+                type: VARCHAR(50)
+        pk:
+            name: test_PK
+            columns:
+                - id
+        idx:
+            test_IDX01:
+                - name
+    execute_history:
+        columns:
+            test_id:
+                type: INT
+            execute_at:
+                type: DATETIME
+        uq:
+            execute_history_UQ01: 
+                - test_id
+                - execute_at
+        check:
+            execute_history_CHK_01: execute_at < current_timestamp()
+
+execute_history_FK01:
+    relate:
+        - execute_history.test_id
+    to:
+        - test.id
