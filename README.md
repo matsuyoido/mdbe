@@ -41,7 +41,19 @@ $ mdbe ddl -l ${yamlFilePath} -o ${outputDir}
 
 ### yaml -> Entity Relation Diagram
 
-TODO develop...
+```
+# Entity Relation Diagram by plantUML
+$ mdbe puml
+
+## if no ask execute
+$ mdbe puml -l ${yamlFilePath} -o ${outputDir}
+
+# tables doc by markdown
+$ mdbe mdoc
+
+## if no ask execute
+$ mdbe mdoc -l ${yamlFilePath} -o ${outputDir}
+```
 
 ### migration ddl
 
@@ -212,4 +224,10 @@ tables:
   to:
     - <child_table_name>.<child_column_name>
 ```
+
+
+## Bug or Request
+
+please create `New Issue` in Japanese or English.
+(Japanese is better...)
 
