@@ -1,0 +1,15 @@
+@startuml
+entity "test" {
+      id
+    --
+      name
+}
+entity "execute_history" {
+    --
+    + test_id <<execute_history_UQ01>>
+    + execute_at <<execute_history_UQ01>>
+}
+/'
+execute_history "test_id" }o--o| "id" test
+'/
+@enduml

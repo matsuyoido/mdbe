@@ -1,0 +1,14 @@
+@startuml
+/'
+l: left
+r: right
+u: up
+d: down
+
+ex.
+parentTable "columnName" |o-l-o{ "columnName" childTable
+'/
+!include 02_tables-table.pu
+
+execute_history "test_id" }o--o| "id" test
+@enduml

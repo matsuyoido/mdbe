@@ -1,0 +1,13 @@
+@startuml
+/'
+l: left
+r: right
+u: up
+d: down
+
+ex.
+parentTable "columnName" |o-l-o{ "columnName" childTable
+'/
+!include 01_minimum-table.pu
+
+@enduml

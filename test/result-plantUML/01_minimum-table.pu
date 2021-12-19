@@ -1,0 +1,12 @@
+@startuml
+entity "test" {
+    --
+      id
+      name
+}
+entity "execute_history" {
+    --
+      test_id
+      execute_at
+}
+@enduml
