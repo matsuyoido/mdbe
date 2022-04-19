@@ -57,7 +57,38 @@ $ mdbe mdoc -l ${yamlFilePath} -o ${outputDir}
 
 ### migration ddl
 
-TODO develop...
+```
+# generate diff DDL SQL
+$ mdbe mgn
+
+## if no ask execute
+$ mdbe mgn -r ${DB "mysql" or "postgre"} -l ${yamlFilePath} -d ${DDLFilePath} -o ${outputSQLFilePath}
+```
+
+#### usage example
+1. generate DDL SQL & manage with Git
+
+        $ mdbe ddl -l product.yml -o dist
+        $ git add dist/product.sql
+        $ git commit ""
+
+2. run generated DDL SQL
+
+        $ mysql -u root -p < dist/product.sql
+
+3. update yaml file
+
+        $ vi product.yml
+        $ git add product.yml
+        $ git commit ""
+
+4. generate diff SQL
+
+        $ mdbe mgn -r mysql -l product.yml -d dist/product.sql -o dist/20220419-01.sql
+
+5. run generated diff DDL SQL
+
+        $ mysql -u root -p < dist/20220419-01.sql
 
 
 
